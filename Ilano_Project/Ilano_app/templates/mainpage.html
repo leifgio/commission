@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Order System</title>
+</head>
+	<body>
+		
+		<form method="POST">
+		
+		
+		<h1><center>CUSTOMERS INFORMATION</center></h1>
+		<fieldset>
+		<label> Customer Name: </label>
+		
+		<input 
+		type="text" 
+		id="Cusname" 
+		name="Cusname" 
+		size="30" 
+		placeholder="Enter your Name here.">
+		<br><br>
+
+		<label> Contact Name: </label>
+		
+		<input 
+		type="text" 
+		id="Cusnum" 
+		name="Cusnum" 
+		size="30" 
+		placeholder="Enter your Number here.">
+		<br><br>
+		
+		<label> Address : </label>
+        
+        <input 
+        type="text"
+        id="CusAD" 
+        name="CusAD"                   
+        placeholder="Enter your Address here."
+        required/>
+        <br><br>
+
+        <label>Sex :</label>
+        <input 
+        type="radio" 
+        id="cusX" 
+        name = "cusXs" 
+        value="Male"> Male </input>
+
+		<input 
+        type="radio" 
+        id="cusX" 
+        name = "cusXs" 
+        value="Female"> Female </input>
+        <br><br>
+
+        <label>Package Type :</label>
+        <input 
+        type="checkbox" 
+        id="inihaw_id" 
+        name = "chxX" 
+        value="Inihaw"> Inihaw Package </input>
+        
+        <input 
+        type="checkbox" 
+        id="prito_id" 
+        name = "chxX1" 
+        value="Prito"> Prito Package </input>
+
+        <input 
+        type="checkbox" 
+        id="other_id" 
+        name = "chxX2" 
+        value="Classic"> Classic Package </input>
+
+        <br><br>
+
+		<input 
+		type="submit" 
+		id="btnsy" 
+		name="btnsy" 
+		value="Submit"/>
+
+		{% csrf_token%}
+	
+	</fieldset>
+	</form>
+	<table id="registryTable">
+		{% for item in registered_Customer_Info%}			
+		<tr>
+			<td>{{forloop.counter}}: {{item.CustomerName}}, {{item.CustomerContact}}, {{item.CustomerAddress}}, {{item.CustomerGender}}, {{item.CustomerPackageType}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NutriGeek</title>
+</head>
+	<body>
+		<form name="cform" id="cform" method="POST">
+			<h1> NutriGeek </h1>
+
+	<!--	<fieldset>
+			<legend> Contact Us </legend>
+			<label>Name:</label>
+				<input 
+					type="text" 
+					id="name" 
+					name="name" 
+					placeholder="Enter your name here."required>
+				</input>
+				<br> <br>
+
+			<label>Email Address:</label>
+				<input 
+					type="text" 
+					id="E_Add" 
+					name="E_Add" 
+					placeholder="Enter your Email Address here."required>
+				</input>
+				<br> <br>
+
+			<label>Message us:</label>
+				<input 
+					type="text" 
+					id="EMessage" 
+					name="EMessage" 
+					placeholder="Enter your message here."required>
+				</input>
+				<br> 
+		</fieldset>
+-->
+
+		<fieldset>
+			<legend>We Recommend, You Eat </legend>
+			<label>Full Name:</label>
+				<input 
+					type="text" 
+					id="fname" 
+					name="fname" 
+					placeholder="Enter your full name here."required>
+				</input>
+				<br> <br>
+
+			<label>Sex:</label>
+				<input 
+                    type="radio"
+                    id="gender" 
+                    name="genders"
+                    value="Male"> Male 
+                </input>
+                <input 
+                    type="radio"
+                    id="gender1" 
+                    name="genders"
+                    value="Female"> Female 
+                </input>
+				<br> <br>
+
+			<label>Age:</label>
+				<input 
+                    type="text" 
+					id="age1" 
+					name="age1" 
+					placeholder="Enter your age here."required>
+                </input>
+				<br> <br>
+
+			<label>Email:</label>
+				<input 
+                    type="text" 
+					id="EAdd" 
+					name="EAdd" 
+					placeholder="name@gmail.com"required>
+                </input>
+				<br> <br>
+
+			<label>Height (in cm):</label>
+				<input 
+                    type="text" 
+					id="EHeight" 
+					name="EHeight" 
+					placeholder="in centimeters"required>
+                </input>
+				<br> <br>
+			<label>Weight (in kg):</label>
+				<input 
+                    type="text" 
+					id="EWeight" 
+					name="EWeight" 
+					placeholder="in kilograms"required>
+                </input>
+				<br> <br>
+
+			<label>Food Allergens:</label>
+			<br> <br>
+				<input 
+                    type="checkbox"
+                    id="Allergen1" 
+                    name="Allergen1"
+                    value="Eggs"> Eggs
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen2" 
+                    name="Allergen1"
+                    value="Milk"> Milk
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen3" 
+                    name="Allergen1"
+                    value="Fish"> Fish
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen4" 
+                    name="Allergen1"
+                    value="Shellfish"> Shellfish 
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen5" 
+                    name="Allergen1"
+                    value="Peanuts"> Peanuts 
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen6" 
+                    name="Allergen1"
+                    value="Tree nuts"> Tree nuts 
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen7" 
+                    name="Allergen1"
+                    value="Soy"> Soy
+                </input>
+				<br>
+
+				<input 
+                    type="checkbox"
+                    id="Allergen8" 
+                    name="Allergen8"
+                    value="Wheat"> Wheat
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen9" 
+                    name="Allergen9"
+                    value="Mustard"> Mustard
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen10" 
+                    name="Allergen10"
+                    value="Sesame and Other seeds"> Sesame and Other seeds
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen11" 
+                    name="Allergen11"
+                    value="Gluten"> Gluten
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen12" 
+                    name="Allergen12"
+                    value="Celery"> Celery
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen13" 
+                    name="Allergen13"
+                    value="Sulphites"> Sulphites
+                </input>
+
+                <input 
+                    type="checkbox"
+                    id="Allergen14" 
+                    name="Allergen14"
+                    value="Aspirin and Salicylates "> Aspirin and Salicylates 
+                </input>
+<br> <br>
+				<input type="submit" id="btnkath" name="btnkath" value="Submit"/>
+				{% csrf_token%}
+		</form>
+		</fieldset>
+	<table id="registryTable">
+		{% for item in registered_Info%}
+		<tr>
+			<td> {{forloop.counter}}: {{item.fullname}}, {{item.sex}}, {{item.age}} years old, {{item.email}}, {{item.height}}cm, {{item.weight}}kg, {{item.foodallergens}}, </td>
+		</tr>
+		{% endfor %}
+	</table>
+	</body>
+</html>
