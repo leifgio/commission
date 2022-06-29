@@ -1,0 +1,10 @@
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="{% url 'mainpage' %}">Client</a>
+      <a class="nav-item nav-link active" href="{% url 'artist' %}">Artists</a>
+      <a class="nav-item nav-link" href="{% url 'service' %}">Services</a>
+    </div>
+  </div>
+</nav>
+				{% block content %}
+				{% endblock %}

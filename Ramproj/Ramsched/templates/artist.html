@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Artists {% endblock %}
+
+{% block content %}
+  <h1>Artist Page</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Artist Name</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for x in artist %}
+    <tr>
+      <td>{{x.artistname}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> 
+
+<a href="#" class="btn btn-primary">Book a service</a>
+{% endblock %}
