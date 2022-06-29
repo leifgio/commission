@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import ClientInformations
-
+from .models import *
 
 def MainPage(request):
       if request.method == "POST":
@@ -16,7 +15,13 @@ def MainPage(request):
       client = ClientInformations.objects.all()
       return render(request,'new_mainpage.html',{'client':client})
 
-      # return render(request, 'new_mainpage.html', {
-      #    'newClientName':request.POST.get('Client'),
-      #    'newClientphoneNo':request.POST.get('clientNo'),
-      #    'newtimeSession':request.POST.get('SessTime')})''
+def ServicePage(request):
+      service = Service.objects.all()
+      context = {'service':service}
+      return render(request,'service.html',context)
+
+def ArtistsPage(request):
+      artist = ArtistInformation.objects.all()
+      context = {'artist':artist}
+      return render(request,'artist.html',context)
+

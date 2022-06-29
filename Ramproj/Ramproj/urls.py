@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Ramsched import views
-from Ramsched.views import MainPage
+from Ramsched.views import MainPage, ServicePage, ArtistsPage
 
 urlpatterns = [
     path('',views.MainPage, name='mainpage'),
+    path('service/',views.ServicePage, name='service'),
+    path('artist/',views.ArtistsPage, name='artist'),
     path('admin/', admin.site.urls),
       ]
 

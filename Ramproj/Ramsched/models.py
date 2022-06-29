@@ -41,5 +41,5 @@ class Payment(models.Model):
         ('P', 'Paymaya'),
         )
     service_id = models.ForeignKey(Service, on_delete=models.CASCADE)
-    voucers  = models.ForeignKey(Voucher, on_delete=models.CASCADE)
+    payment_voucher  = models.ForeignKey(Voucher, on_delete=models.CASCADE)
 
