@@ -20,7 +20,7 @@ class Service(models.Model):
         )
     service_artist = models.TextField(blank = True)
     service_client = models.TextField(blank = True)
-    service_date = models.TextField(blank = True)
+    service_date = models.DateField(blank = True)
     service_type = models.TextField(blank = True, choices=SERVICE_TYPES)
 
 class Voucher(models.Model):

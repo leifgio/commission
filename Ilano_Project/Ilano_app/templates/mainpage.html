@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Order System</title>
-</head>
-	<body>
+{% extends 'base.html' %}
+{% block title %} Artists {% endblock %}
+
+{% block content %}
 		
 		<form method="POST">
 		
@@ -59,20 +55,20 @@
         <label>Package Type :</label>
         <input 
         type="checkbox" 
-        id="inihaw_id" 
+        id="inihaw" 
         name = "chxX" 
         value="Inihaw"> Inihaw Package </input>
         
         <input 
         type="checkbox" 
         id="prito_id" 
-        name = "chxX1" 
+        name = "chxX" 
         value="Prito"> Prito Package </input>
 
         <input 
         type="checkbox" 
         id="other_id" 
-        name = "chxX2" 
+        name = "chxX" 
         value="Classic"> Classic Package </input>
 
         <br><br>
@@ -94,5 +90,5 @@
 		</tr>
 		{% endfor %}
 	</table>
-	</body>
-</html>
+
+{% endblock %}

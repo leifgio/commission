@@ -4,7 +4,7 @@
 {% block content %}
 	<form id="review" method="POST">
     <fieldset>
-	<h1><center>Register Now!</center></h1>
+	<h1>Register Now!</h1>
 	<label>Last Name: 
 		<input type="text" id="last" name="last" placeholder="Enter your name here.">  
 	</label>
@@ -51,6 +51,7 @@
         {% csrf_token %}
 	</form>
 	<hr>
+  <h1>Registered Clients</h1>
  <table class="table">
   <thead>
     <tr>

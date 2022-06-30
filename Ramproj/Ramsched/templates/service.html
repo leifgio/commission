@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Artists {% endblock %}
+{% block title %} Service {% endblock %}
 
 {% block content %}
 
@@ -27,5 +27,5 @@
   </tbody>
 </table> 
 
-<a href="#" class="btn btn-primary">Book a service</a>
+<a href="{% url 'add-service' %}" class="btn btn-primary">Book a service</a>
 {% endblock %}

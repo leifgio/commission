@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Ilano_app.views import ilano_view
+from Ilano_app.views import OrderPage, ReviewPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ilano_view, name="main"),
+    path('', OrderPage, name="order"),
+    path('review/', ReviewPage, name="review"),
+  #  path('', OrderPage, name="order"),
+  #  path('', ProductPage, name="product"),
+  #  path('', ContactPage, name="contact"),
 ]

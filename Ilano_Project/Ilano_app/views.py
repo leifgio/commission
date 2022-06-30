@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import CustomerInformations
+from .models import CustomerInformations, Review
 
 # Create your views here.
 
-def ilano_view(request):
+def OrderPage(request):
 	if request.method == "POST":
 		CustomerInformations.objects.create(CustomerName=request.POST['Cusname'],
 			CustomerContact=request.POST['Cusnum'],
@@ -15,9 +15,19 @@ def ilano_view(request):
 	CustomerInfoList = CustomerInformations.objects.all()
 	return render(request, 'mainpage.html',{'registered_Customer_Info': CustomerInfoList})
 
-	# return render(request, 'mainpage.html', {'CN':request.POST.get('Cusname'),
-	# 	'AD':request.POST.get('CusAD'),
-	# 	'CT':request.POST.get('Cusnum'),
-	# 	'CX':request.POST.get('cusX'),
-	# 	'CK':request.POST.get('chxX'),
-	# 	})
+def ReviewPage(request):
+	if request.method == "POST":
+		Review.objects.create(
+			Cus_ID=request.POST['cusid'],
+			Pro_ID=request.POST['proid'],
+			Rev_Comment=request.POST['review'],
+			Rev_Suggestion=request.POST['suggestion']
+			)
+		return redirect('/')
+	review = Review.objects.all()
+	return render(request, 'mainpage.html',{'review': review})
+
+	Cus_ID = models.ForeignKey(Customer,on_delete = models.CASCADE)	
+	Pro_ID = models.ForeignKey(Products,on_delete = models.CASCADE)
+	Rev_Comment = models.TextField(blank = True)
+	Rev_Suggestion = models.TextField(blank = True)
